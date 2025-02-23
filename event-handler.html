@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event handler </title>
+</head>
+<body>
+    <!--1  simple clik handler apply  change  to innerText -->
+
+     <h1 id="head-title">Hi This is Shakib</h1>
+    <button id="btn-click">click me </button>
+    <script>
+     document.getElementById('btn-click').addEventListener('click',function(){
+        const btnClick = document.getElementById('head-title');
+        btnClick.innerText = "hey i am Ashik"
+        
+     })
+    </script> 
+
+    <!--2  simple clik handler apply  change  to primary input field -->
+
+     <p id="Pname">No Name</p>
+    <input id="input-name" type="text" placeholder="enter your name " name="" id="">
+    <button id="btn-submit" type="submit">submit</button>
+
+    <script>
+        // set eventListener 
+        document.getElementById('btn-submit')
+        .addEventListener('click',function(){
+            // get id 
+            const inputName = document.getElementById('input-name');
+            // get the text / value  from the input field
+           const name = inputName.value;
+           //  get id
+           const pname =document.getElementById("Pname")
+          //  set final text / value 
+           pname.innerText = name; 
+            
+        })
+    </script>
+
+</body>
+</html>

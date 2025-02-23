@@ -10,13 +10,46 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ratione, nam
       rem consequatur culpa architecto possimus asperiores atque illo deserunt.
     </p>
-    <!-- option 1 for even handler -->
-    <button onclick="console.log('this is click')">submit</button>
-    <br />
 
-    <!-- option 2 for even handler -->
+    <!-- option 1 for event handler -->
+    <button onclick="console.log('this is click')">submit</button>
+  <!-- .......... -->
+
+   <!-- option 2 for event handler -->
     <button onclick="bgRed()">click to bd red</button>
-    <button onclick="bgBlue()">click to bg blue</button>
+    <script>
+            function bgRed() {
+        document.body.style.backgroundColor = "red";
+      }
+    </script>
+    
+    <!-- option 3 for event handler -->
+    <button id="btn2"> onclick5</button>
+    <script>
+      const button = document.getElementById('btn2')
+      button.onclick = darkMode;
+
+      function darkMode(){
+        document.body.style.backgroundColor= 'red'
+      }
+    </script>
+<!-- ................ -->
+    <!--option 4 is  most recomended for event handler -->
+    <button id="most"> most event click</button>
+    <script>
+    document.getElementById('most').addEventListener('click',function click (){
+      document.body.style.backgroundColor= "yellow"
+    })
+    </script>
+
+    <!-- ............... -->
     <script src="event.js"></script>
+    <script>
+
+
+
+
+ </script>
+   
   </body>
 </html>
