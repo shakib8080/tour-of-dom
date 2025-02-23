@@ -109,7 +109,8 @@
 // const nextPre = pre.nextSibling;
 // console.log(nextPre.innerText);
 
-//use  slector get first child
+/* use  slector get ALL-child */
+
 // 1 first child / firstChild
 const first = document.querySelector(".unorder-list");
 console.log(first.firstChild);
