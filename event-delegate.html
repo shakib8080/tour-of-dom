@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event delegate</title>
+  </head>
+  <body>
+    <div>
+      <ol id="id-ol">
+        <li class="child">item1</li>
+        <li class="child">item2</li>
+        <li class="child">item3</li>
+        <li class="child">item4</li>
+      </ol>
+      <button id="btn-id">add name</button>
+    </div>
+
+    <script>
+      //   const items = document.getElementsByClassName("child");
+      //   for (const item of items) {
+      //     item.addEventListener("click", function (event) {
+      //       event.target.parentNode.removeChild(event.target);
+      //     });
+      //   }
+      document
+        .getElementById("id-ol")
+        .addEventListener("click", function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+      document.getElementById("btn-id").addEventListener("click", function () {
+        const parentDiv = document.getElementById("id-ol");
+        const li = document.createElement("li");
+        li.innerText = "this item is new";
+        parentDiv.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

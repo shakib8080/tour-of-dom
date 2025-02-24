@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>more event</title>
+  </head>
+  <body>
+    <div>
+      <!-- siple mouseenter with evnt handler -->
+      <button id="btn-mouse">micky mouse</button>
+      <script>
+        document
+          .getElementById("btn-mouse")
+          .addEventListener("mouseenter", function () {
+            console.log("mouseenter");
+          });
+      </script>
+
+      <!--  2 siple mouseMove with evnt handler -->
+      <button id="btn-mouse2">micky mouse</button>
+      <script>
+        document
+          .getElementById("btn-mouse2")
+          .addEventListener("mousemove", function () {
+            console.log("mousemove");
+          });
+      </script>
+      <!--3 siple mouseMove with evnt handler -->
+      <button id="btn-mouse2">micky mouse</button>
+      <script>
+        document
+          .getElementById("btn-mouse2")
+          .addEventListener(" ", function () {
+            console.log("mousemove");
+          });
+      </script>
+    </div>
+    <div>
+      <!-- simple input focus with event handler -->
+
+      <input id="input-name" placeholder="enter your name" type="text" />
+      <input id="input-email" placeholder="enter your email" type="text" />
+      <script>
+        document
+          .getElementById("input-name")
+          .addEventListener("focus", function () {
+            console.log("focus name in input field");
+          });
+        document
+          .getElementById("input-email")
+          .addEventListener("focus", function () {
+            console.log("focus email in input field");
+          });
+      </script>
+      <!-- simple input blur with event handler -->
+      <input id="blur-input-name" placeholder="enter your name" type="text" />
+      <input id="blur-input-email" placeholder="enter your email" type="text" />
+      <script>
+        document
+          .getElementById("blur-input-name")
+          .addEventListener("blur", function () {
+            console.log("input name is blur");
+          });
+
+        document
+          .getElementById("blur-input-email")
+          .addEventListener("blur", function () {
+            console.log("input email is blur");
+          });
+      </script>
+    </div>
+    <div>
+      <!-- simple event keydown handler -->
+      <input id="keydown" placeholder="enter your name" type="text" />
+      <script>
+        document
+          .getElementById("keydown")
+          .addEventListener("keydown", function (event) {
+            console.log("typing", event.target.value);
+          });
+      </script>
+      <!-- simple event keyup handler -->
+      <input id="keyup" placeholder="enter your name" type="text" />
+      <script>
+        document
+          .getElementById("keyup")
+          .addEventListener("keyup", function (event) {
+            console.log("typing", event.target.value);
+          });
+      </script>
+    </div>
+    <br />
+    <br />
+    <div>
+      <!-- siple delete input in event handler with disable and enable and display none and block-->
+      <p id="secret-info">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,
+        pariatur!
+      </p>
+      <input id="delete-input" placeholder="enter the value" type="text" />
+      <button id="delete-btn" disabled>delete</button>
+      <script>
+        document
+          .getElementById("delete-input")
+          .addEventListener("keyup", function (event) {
+            const text = event.target.value;
+            const deleteBtn = document.getElementById("delete-btn");
+
+            if (text === "delete") {
+              deleteBtn.removeAttribute("disabled");
+              const secretInfo = document.getElementById("secret-info");
+              secretInfo.style.display = "none";
+            } else {
+              deleteBtn.setAttribute("disabled", true);
+              const secretInfo = document.getElementById("secret-info");
+              secretInfo.style.display = "block";
+            }
+          });
+      </script>
+    </div>
+  </body>
+</html>

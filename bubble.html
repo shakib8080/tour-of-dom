@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bubble</title>
+    <style>
+      #section-id {
+        border: 2px solid green;
+        padding: 100px;
+      }
+      #heading {
+        border: 2px solid yellow;
+      }
+      #ul-id {
+        border: 2px solid red;
+      }
+      #body-id {
+        border: 2px solid black;
+        padding: 100px;
+      }
+    </style>
+  </head>
+  <body id="body-id">
+    <section id="section-id">
+      <h1 id="heading ">introdunction to bubble</h1>
+      <ul id="ul-id">
+        <li>listitem1</li>
+        <li id="list-2-id">listitem2</li>
+        <li>listitem3</li>
+        <li>listitem4</li>
+      </ul>
+    </section>
+    <script>
+      //1  list item click handler
+      document
+        .getElementById("list-2-id")
+        .addEventListener("click", function (event) {
+          console.log("list item cliked");
+          //   stopPropagation
+          event.stopPropagation();
+        });
+      // 2 ul click handler
+      document.getElementById("ul-id").addEventListener("click", function () {
+        console.log("click ul handler");
+      });
+
+      //   3 click section handler
+      document
+        .getElementById("section-id")
+        .addEventListener("click", function () {
+          console.log("click section handler ");
+        });
+      //   4 click section handler
+      document.getElementById("body-id").addEventListener("click", function () {
+        console.log("click body handler");
+      });
+    </script>
+  </body>
+</html>
